@@ -1,3 +1,4 @@
 <?php
 
-$password = 'toto';
+$username = 'Damien';
+$password = 'titi';
