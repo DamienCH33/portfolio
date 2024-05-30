@@ -4,9 +4,7 @@ include_once 'header.php';
 
 if (!empty($rows)) { ?>
     <table>
-        <?php foreach ($rows as $row) {
-            var_dump($row);
-            ?>
+        <?php foreach ($rows as $row) { ?>
             <tr>
                 <td><?php echo $row['Name'] ?></td>
                 <td><?php echo $row['descriptif_competence'] ?></td>

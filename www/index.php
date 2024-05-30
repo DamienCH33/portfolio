@@ -2,7 +2,7 @@
 
 session_start();
 
-require '../tools/db.php';
+require '../tools/BaseDeDonnee.php';
 
 $requestUri = trim($_SERVER['REQUEST_URI'], '/');
 

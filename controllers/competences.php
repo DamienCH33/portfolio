@@ -1,9 +1,10 @@
 <?php
 
-$rows = trouveTout('competences', ['level' => 'desc']);
+$baseDeDonnee = new BaseDeDonnee();
+$rows = $baseDeDonnee->trouveTout('competences', ['level' => 'desc']);
 
-insertTo('competences', [
-    'Name' => 'Totototot',
+$baseDeDonnee->insertTo('competences', [
+    'Name' => "Totototot",
     'descriptif_competence' => 'foobar',
     'level' => 20
 ]);
