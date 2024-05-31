@@ -8,10 +8,25 @@ $controle = new Formulaire();
 
 if ($controle->isSubmitted()) {
     $controle->validate([
-        ['colonne' => 'nom', 'requis' => true, 'alphabetique' => true],
-        ['colonne' => 'prenom', 'requis' => true, 'alphabetique' => true],
-        ['colonne' => 'mail', 'requis' => true, 'email' => true],
-        ['colonne' => 'phone', 'requis' => true, 'phone' => true],
+        ['colonne' => 'nom', 'validation' => [
+            'requis', 'alphabetique'
+        ]],
+        ['colonne' => 'prenom', 'validation' => [
+            'requis',
+            'alphabetique'
+        ]],
+        ['colonne' => 'mail', 'validation' => [
+            'requis',
+            'email'
+        ]],
+        ['colonne' => 'phone', 'validation' => [
+            'requis',
+            'phone'
+        ]],
+        ['colonne' => 'message', 'validation' => [
+            'requis',
+            'alphanumerique'
+        ]],
     ]);
 
     if ($controle->isValid()) {
@@ -20,6 +35,7 @@ if ($controle->isSubmitted()) {
             'prenom' => $_POST['prenom'],
             'mail' => $_POST['mail'],
             'phone' => $_POST['phone'],
+            'message' => $_POST['message'],
         ]);
 
         header('Location: /contact/?valid=1');
